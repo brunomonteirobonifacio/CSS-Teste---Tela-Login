@@ -20,7 +20,7 @@
             <p><input type="password" placeholder="Confirm Password" class="input" name="confpass" required>
             <p class="aligned"><input type="submit" value="Sign Up"class="button"></p>
             <p class="text">Already have an account?
-        <br/><a href="index.html"target="_self" class="redir">Login</a></p>
+        <br/><a href="index.php"target="_self" class="redir">Login</a></p>
         </div>
     </form>
 </body>

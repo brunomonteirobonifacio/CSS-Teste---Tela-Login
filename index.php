@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Test</title>
     <link rel="stylesheet" href="style.css">
+    <!-- code by github.com/brunomonteirobonifacio -->
 </head>
 <body>
+    <?php
+        if ($_GET['user'] == "notf"){
+            echo "<script>alert('User not found')</script>";
+        }
+    ?>
     <div class="box">
         <form method="post" action="confirm_login.php">
             <input type="text" placeholder="Enter Name" class="input" name="username" required>
