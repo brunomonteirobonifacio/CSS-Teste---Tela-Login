@@ -13,6 +13,9 @@
         if ($_GET['user'] == "notf"){
             echo "<script>alert('User not found')</script>";
         }
+        if ($_GET['user'] == "pwinc"){
+            echo "<script>alert('Incorrect Password')</script>";
+        }
     ?>
     <div class="box">
         <form method="post" action="confirm_login.php">
