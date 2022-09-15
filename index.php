@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Test</title>
     <link rel="stylesheet" href="style.css">
-    <!-- code by github.com/brunomonteirobonifacio -->
+    <!-- code by https://github.com/brunomonteirobonifacio -->
 </head>
 <body>
     <div class="box">
