@@ -6,21 +6,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php
-        if ($_GET['user'] == "already"){
-            echo "<script>alert('Username already taken')</script>";
-        } else if ($_GET['user'] == "pwerror"){
-            echo "<script>alert('Both passwords must match')</script>";
-        }
-    ?>
-    <form method="post" action="confirm_signup.php">
+    <script src="script.js"></script>
+    <form id="form">
         <div class="box">
-            <input type="text" placeholder="Enter Name" class="input" name="username" required>
-            <p><input type="password" placeholder="Enter Password" class="input" name="password" required>
-            <p><input type="password" placeholder="Confirm Password" class="input" name="confpass" required>
-            <p class="aligned"><input type="submit" value="Sign Up"class="button"></p>
+            <input type="text" placeholder="Enter Name" class="input" name="username" id="name"required onchange="nameCheck()"> 
+            <p id="erroruser" class="errormsg"></p>
+            <p><input type="password" placeholder="Enter Password" class="input" name="password" id="pass" onchange= "passwordCheck()" required>
+            <p><input type="password" placeholder="Confirm Password" class="input" name="confpass" id="confpass" onchange= "passwordCheck()" required>
+            <p id="errorpass" class="errormsg"></p>
+            <p class="aligned"><input type="button" value="Sign Up" class="button" id="button" onclick="submitCheck()"></p>
             <p class="text">Already have an account?
-        <br/><a href="index.php"target="_self" class="redir">Login</a></p>
+            <br/><a href="index.php"target="_self" class="redir">Login</a></p>
         </div>
     </form>
 </body>
