@@ -8,17 +8,14 @@ function nameCheck() {
     } else {
         const myRequest = new XMLHttpRequest();
         myRequest.open("post","phpGetUsername.php");
-        myRequest.onload = console.log(myRequest.responseType);
         let dbName = myRequest.response;
         myRequest.send(new FormData(myForm));
         if (dbName){
             errorUser.innerText = "Username already taken";
-            name.style.borderStyle = 'solid';
-            name.style.borderColor = 'red';
+            name.style.border = 'solid red';
             return false;
         } else {
-            name.style.borderStyle = 'solid';
-            name.style.borderColor = 'green';
+            name.style.border = 'solid green';
             errorUser.innerText = '';
             return true;
         }
@@ -36,17 +33,13 @@ function passwordCheck() {
     } else {
         if (password.value !== confpass.value) {
             errorpass.innerText = "Both passwords must match";
-            password.style.borderStyle = 'solid';
-            confpass.style.borderStyle = 'solid';
-            password.style.borderColor = 'red';
-            confpass.style.borderColor = 'red';
+            password.style.border = 'solid red';
+            confpass.style.border = 'solid red';
             return false;
         } else {
             errorpass.innerText = "";
-            password.style.borderStyle = 'solid';
-            confpass.style.borderStyle = 'solid';
-            password.style.borderColor = 'green';
-            confpass.style.borderColor = 'green';
+            password.style.border = 'solid green';
+            confpass.style.border = 'solid green';
             return true;
         }
     }
