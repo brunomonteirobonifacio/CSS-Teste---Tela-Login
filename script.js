@@ -2,23 +2,37 @@ function nameCheck() {
     const myForm = document.getElementById("form");
     let name = document.getElementById("name");
     let errorUser = document.getElementById("erroruser");
+    let data = {
+        "username": name.value
+    }
+
     if (name.value == ''){
         errorUser.innerText = '';
         name.style.borderStyle = 'hidden';
     } else {
-        const myRequest = new XMLHttpRequest();
-        myRequest.open("post","phpGetUsername.php");
-        let dbName = myRequest.response;
-        myRequest.send(new FormData(myForm));
-        if (dbName){
-            errorUser.innerText = "Username already taken";
-            name.style.border = 'solid red';
-            return false;
-        } else {
-            name.style.border = 'solid green';
-            errorUser.innerText = '';
-            return true;
-        }
+        //console.log(JSON.stringify(data))
+        fetch("php_get_username.php", {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        })
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            console.log(data)
+        });
+        //if (dbName){
+        //    errorUser.innerText = "Username already taken";
+        //    name.style.border = 'solid red';
+        //    return false;
+        //} else {
+        //    name.style.border = 'solid green';
+        //    errorUser.innerText = '';
+        //    return true;
+        //}
     }
 }
 
